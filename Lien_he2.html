@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- <link rel="stylesheet" href="Menu.css"> -->
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+    }
+    
+    .ten_web {
+        position: relative;
+        font-size: 40px;
+        color: white;
+        top: 5px;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    header {
+        position: relative;
+        justify-content: left;
+        z-index: 10;
+    }
+    
+    .header {
+        width: 215vh;
+        height: 60px;
+        position: fixed;
+        background-color: rgb(0, 85, 128);
+    }
+    /* chỉnh kích cỡ icon */
+    
+    .icon-size {
+        font-size: 20px;
+        color: white;
+    }
+    
+    ul.nav {
+        display: flex;
+        justify-content: left;
+    }
+    
+    ul.nav>li {
+        list-style: none;
+        /* bo dau cham tren dau */
+        padding: 0 40px;
+        position: relative;
+        left: 5%;
+        /* lay lam goc */
+    }
+    
+    ul.nav li:hover {
+        border-bottom: 1px solid rgb(116, 116, 107);
+        z-index: 1;
+        background-color: grey;
+    }
+    
+    ul.nav li a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        /* tat bo gach chan */
+        line-height: 60px;
+        /* dat trung voi chieu cao */
+    }
+    
+    .sub-nav {
+        display: none;
+        /* ẩn */
+        height: auto;
+        background-color: rgb(0, 85, 128);
+        font-size: 25px;
+        position: absolute;
+        left: 0%;
+    }
+    
+    .sub-nav li {
+        list-style: none;
+        text-align: center;
+        margin-left: 10;
+        border-bottom: 1px solid rgb(149, 233, 100);
+        width: 200px;
+    }
+    
+    .sub-nav ul.sub-nav {
+        background-color: rgb(149, 233, 100);
+        left: 200px;
+        top: 0;
+        width: 200px;
+    }
+    
+    ul.nav ul.sub-nav li {
+        position: relative;
+    }
+    
+    ul.nav li:hover>.sub-nav {
+        /* chi truc tiep */
+        display: block;
+    }
+    
+    main {
+        position: relative;
+    }
+    
+    .main {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        color: rgb(20, 3, 90);
+        font-size: 30px;
+        text-align: center;
+        z-index: 1;
+        top: 150px;
+        font-family: 'Calibri', Times, serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: green 0px 5px;
+        border: 1px solid green;
+    }
+    
+    .block {
+        position: relative;
+        background: rgba(0, 0, 255, 0.103);
+        border: 1px solid rgb(128, 1, 128);
+        border-radius: 10px;
+        box-shadow: black 3px 3px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .html {
+        left: 18%;
+        top: 250px;
+        width: 300px;
+        height: 400px;
+    }
+    
+    .css {
+        left: 43%;
+        top: -180px;
+        width: 300px;
+        height: 400px;
+    }
+    
+    .js {
+        top: -610px;
+        left: 67%;
+        height: 400px;
+        width: 300px;
+    }
+    
+    .block:hover {
+        background: rgba(128, 0, 128, 0.608);
+    }
+    
+    .vao_hoc {
+        position: relative;
+        width: 100px;
+        height: 40px;
+        background: rgb(4, 103, 241);
+        border: 1px solid rgb(246, 240, 240);
+        text-align: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: white;
+        box-shadow: black 1px 1px;
+        display: flex;
+        padding: 10px;
+    }
+    
+    #vao_hoc1 {
+        position: relative;
+        left: 24%;
+        top: 150px;
+    }
+    
+    #vao_hoc2 {
+        position: relative;
+        left: 49%;
+        top: -275px;
+    }
+    
+    #vao_hoc3 {
+        position: relative;
+        bottom: 710px;
+        left: 73%;
+    }
+    
+    .footer {
+        position: relative;
+        /* bottom: 0%; */
+        width: 100%;
+        height: 100px;
+        background: rgba(153, 147, 147, 0.633);
+        text-align: center;
+        padding: 5%;
+        color: rgba(0, 0, 0, 0.404);
+        box-shadow: black 2px 2px 3px 2px;
+    }
+    /*  */
+    
+    .head {
+        position: relative;
+        /* margin: 50px; */
+        font-size: 25px;
+        /* box-shadow: rgba(128, 128, 128, 0.501) 0px 1px; */
+        left: 0px;
+    }
+    
+    .img {
+        position: relative;
+        left: 60%;
+        top: -210px;
+        width: 600px;
+        height: 600px;
+    }
+    
+    .main i {
+        position: absolute;
+    }
+</style>
+
+<header>
+    <div class="header">
+        <ul class="nav">
+
+            <div class="ten_web"><span><b>SKILL UP</b></span></div>
+
+            <li id="b1">
+                <i class="fas fa-home icon-size"></i>
+                <a href="" wight="10px" height="10xp">Trang chủ</a>
+            </li>
+
+            <li><a href="D1">Khóa học</a>
+
+                <ul class="sub-nav">
+
+                    <li>
+                        <a href="">HTML</a>
+                    </li>
+                    <li><a href="">CSS</a>
+                    </li>
+                    <li>
+                        <a href="">javascript</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">Đề thi</a>
+            </li>
+            <li>
+                <a href="">Kết quả thi</a>
+            </li>
+            <li><a href="Lien_He.html">Liên hệ</a></li>
+
+            <li class="dang_xuat">
+                <i class="fas fa-sign-out-alt icon-size"></i>
+                <a href="">Đăng xuất</a>
+            </li>
+            <!--  -->
+            <li>
+                Lưu thông tin
+            </li>
+        </ul>
+    </div>
+</header>
+
+<body>
+
+
+
+
+    <div class="head">
+        <h1>Thông tin liên hệ</h1>
+
+        <div class="main">
+            <div> <i class="fas fa-phone"></i>Holine: 0334010233</div>
+            <div>
+                <i class="fas fa-envelope"></i> Email:
+                <a href="ngockhuat57@gmail.com">ngockhuat57@gmail.com</a>
+            </div>
+            <div><i class="fab fa-facebook"></i>Facebook:
+                <a href="https://www.facebook.com/ngoc.khuat.129357">https://www.facebook.com/ngoc.khuat.129357</a>
+            </div>
+            <div class="img"><img src="https://media3.giphy.com/media/v1.Y2lkPTk5OWFjZWFjYjE1aHhteWc2amFqeHRvazZ6c3I0cWZmMTZ2NnFmMmRhOGdvaDMxeiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EeZ6mLsRRik8cgnh3D/giphy.gif" alt=""></div>
+
+        </div>
+    </div>
+</body>
+
+
+
+</html>

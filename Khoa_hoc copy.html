@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- <link rel="stylesheet" href="Menu.css"> -->
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+    }
+    
+    .ten_web {
+        position: relative;
+        font-size: 40px;
+        color: white;
+        top: 5px;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    header {
+        position: relative;
+        justify-content: left;
+        z-index: 10;
+    }
+    
+    .header {
+        width: 215vh;
+        height: 60px;
+        position: fixed;
+        background-color: rgb(0, 85, 128);
+    }
+    
+    .icon-size {
+        font-size: 20px;
+        color: white;
+    }
+    
+    ul.nav {
+        display: flex;
+        justify-content: left;
+    }
+    
+    ul.nav>li {
+        list-style: none;
+        /* bo dau cham tren dau */
+        padding: 0 40px;
+        position: relative;
+        left: 5%;
+        /* lay lam goc */
+    }
+    
+    ul.nav li:hover {
+        border-bottom: 1px solid rgb(116, 116, 107);
+        z-index: 1;
+        background-color: grey;
+    }
+    
+    ul.nav li a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        /* tat bo gach chan */
+        line-height: 60px;
+        /* dat trung voi chieu cao */
+    }
+    
+    .sub-nav {
+        display: none;
+        /* ẩn */
+        height: auto;
+        background-color: rgb(0, 85, 128);
+        font-size: 25px;
+        position: absolute;
+        left: 0%;
+    }
+    
+    .sub-nav li {
+        list-style: none;
+        text-align: center;
+        margin-left: 10;
+        border-bottom: 1px solid rgb(149, 233, 100);
+        width: 200px;
+    }
+    
+    .sub-nav ul.sub-nav {
+        background-color: rgb(149, 233, 100);
+        left: 200px;
+        top: 0;
+        width: 200px;
+    }
+    
+    ul.nav ul.sub-nav li {
+        position: relative;
+    }
+    
+    ul.nav li:hover>.sub-nav {
+        /* chi truc tiep */
+        display: block;
+    }
+    
+    main {
+        position: relative;
+        height: 100%;
+        width: 100vh;
+        left: 25%;
+        top: 70px;
+    }
+    
+    h1 {
+        position: relative;
+        color: rgb(0, 85, 128);
+        font-size: 25px;
+        font-weight: 600;
+        left: 20%;
+        top: 60px;
+        font-size: 40px;
+        /* box-shadow: blue 1px 1px 1px 1px; */
+        width: 400px;
+    }
+    
+    .img_main {
+        position: relative;
+        opacity: 0.2;
+        top: -4px;
+        left: -30%;
+    }
+    
+    .content {
+        left: -30%;
+        position: absolute;
+        top: 15%;
+        height: 50%;
+        width: 150vh;
+        display: flex;
+    }
+    
+    .course {
+        height: 110%;
+        width: 300px;
+        left: -20%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(14, 117, 235, 0.301);
+        margin: auto;
+        padding: 2%;
+        align-items: center;
+        position: relative;
+        border-radius: 20px;
+        border: 1 solid rgba(128, 128, 128, 0.927);
+    }
+    
+    .button {
+        position: absolute;
+        width: 50%;
+        height: 10%;
+        top: 80%;
+        background: rgba(180, 26, 2, 0.997);
+        border: 1px solid rgba(128, 128, 128, 0.727);
+        border-radius: 10px;
+        color: ghostwhite;
+        box-shadow: 1px 1px black;
+    }
+    
+    .course:hover {
+        background-color: rgb(0, 85, 128);
+    }
+    
+    .footer {
+        position: relatflive;
+        bottom: -0%;
+        width: 100%;
+        height: 100px;
+        background: rgba(128, 128, 128, 0.626);
+        text-align: center;
+        padding: 5%;
+        color: rgba(0, 0, 0, 0.518);
+    }
+    
+    button:hover {
+        background: rgb(32, 32, 3);
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: 400;
+    }
+</style>
+
+<body id="phancuathetrang">
+
+    <header>
+        <div class="header">
+            <ul class="nav">
+
+                <div class="ten_web"><b>SKILL UP</b></div>
+
+                <li id="b1">
+                    <i class="fas fa-home icon-size"></i>
+                    <a href="" wight="10px" height="10xp">Trang chủ</a>
+                </li>
+
+                <li><a href="">Khóa học</a>
+
+                    <ul class="sub-nav">
+                        <li>
+                            <a href="">HTML</a>
+                        </li>
+                        <li><a href="">CSS</a>
+                        </li>
+                        <li>
+                            <a href="">javascript</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Đề thi</a>
+                </li>
+                <li>
+                    <a href="">Kết quả thi</a>
+                </li>
+                <li><a href="Lien_He.html">Liên hệ</a></li>
+                <li class="dang_xuat">
+                    <i class="fas fa-sign-out-alt icon-size"></i>
+                    <a href="">Đăng xuất</a>
+                </li>
+                <li>
+                    Lưu thông tin
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <h1>
+            <marquee Direction="" behavior="alternate">
+                <div class="lt">LUYỆN TẬP </div>
+            </marquee>
+
+            <img src="home.png" alt="" class="img_main">
+            </div>
+            <div class="content">
+                <div class="course">
+
+                    <img src="html.png">
+                    <button type="button" class="button">Vào học</button>
+                </div>
+                <div class="course">
+                    <img src="css.png">
+                    <button type="button" class="button">Vào học</button>
+                </div>
+                <div class="course">
+                    <img src="js.png">
+                    <button type="button" class="button">Vào học</button>
+                </div>
+            </div>
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>Nhóm 10 K72 Công nghệ Web</p>
+            <p>26 tháng 12, 2023</p>
+            <p>All rights reserved by ©Ngoc Linh is number one Khoa Công nghệ thông tin - ĐHSPHN 2023</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+
+</html>
+
+</html>

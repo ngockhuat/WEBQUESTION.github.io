@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đề thi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        
+        #app {
+            width: 80%;
+            margin: 50px auto;
+        }
+        
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        textarea,
+        input {
+            width: 100%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Quản lý Đề thi</h2>
+        <div id="questionList">
+            <!-- Danh sách câu hỏi sẽ được hiển thị ở đây -->
+        </div>
+        <button onclick="showAddQuestionForm()">Thêm câu hỏi</button>
+        <div id="questionForm" style="display: none;">
+            <!-- Form thêm/sửa câu hỏi sẽ được hiển thị ở đây -->
+            <label for="questionText">Câu hỏi:</label>
+            <textarea id="questionText"></textarea>
+            <label for="answer">Đáp án:</label>
+            <input type="text" id="answer">
+            <button onclick="saveQuestion()">Lưu câu hỏi</button>
+            <button onclick="cancelQuestion()">Hủy</button>
+        </div>
+    </div>
+
+    <script>
+        let questions = []; // Mảng lưu trữ danh sách câu hỏi
+
+        function showAddQuestionForm() {
+            document.getElementById('questionForm').style.display = 'block';
+        }
+
+        function cancelQuestion() {
+            document.getElementById('questionForm').style.display = 'none';
+        }
+
+        function saveQuestion() {
+            const questionText = document.getElementById('questionText').value;
+            const answer = document.getElementById('answer').value;
+
+            // Kiểm tra xem có nội dung câu hỏi và đáp án không trống
+            if (questionText.trim() !== '' && answer.trim() !== '') {
+                const newQuestion = {
+                    question: questionText,
+                    answer: answer
+                };
+
+                questions.push(newQuestion);
+                displayQuestions();
+                cancelQuestion();
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin câu hỏi và đáp án.');
+            }
+        }
+
+        function displayQuestions() {
+            const questionListDiv = document.getElementById('questionList');
+            questionListDiv.innerHTML = ''; // Xóa nội dung cũ
+
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.innerHTML = `
+            <p><strong>Câu hỏi ${index + 1}:</strong> ${question.question}</p>
+            <p><strong>Đáp án:</strong> ${question.answer}</p>
+            <button onclick="editQuestion(${index})">Sửa</button>
+            <button onclick="deleteQuestion(${index})">Xóa</button>
+            <hr>
+        `;
+                questionListDiv.appendChild(questionDiv);
+            });
+        }
+
+        function editQuestion(index) {
+            const selectedQuestion = questions[index];
+            document.getElementById('questionText').value = selectedQuestion.question;
+            document.getElementById('answer').value = selectedQuestion.answer;
+
+            // Hiển thị lại form và ẩn button "Thêm câu hỏi"
+            showAddQuestionForm();
+            document.querySelector('button').style.display = 'none';
+
+            // Tạo một nút "Lưu sửa đổi"
+            const saveEditButton = document.createElement('button');
+            saveEditButton.innerHTML = 'Lưu sửa đổi';
+            saveEditButton.onclick = function() {
+                saveEditedQuestion(index);
+            };
+
+            // Thêm nút "Lưu sửa đổi" vào form
+            const questionForm = document.getElementById('questionForm');
+            questionForm.appendChild(saveEditButton);
+        }
+
+        function saveEditedQuestion(index) {
+            const editedQuestionText = document.getElementById('questionText').value;
+            const editedAnswer = document.getElementById('answer').value;
+
+            // Kiểm tra xem có nội dung câu h
+        }
+    </script>
+</body>
+
+</html>
