@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <!-- <link rel="stylesheet" href="Menu.css"> -->
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+    }
+    
+    .ten_web {
+        position: relative;
+        font-size: 40px;
+        color: white;
+        top: 5px;
+        left: 40px;
+        cursor: pointer;
+        text-shadow: 4px 6px black;
+    }
+    
+    .ten_web:hover {
+        font-size: 43px;
+    }
+    
+    header {
+        position: relative;
+        justify-content: left;
+        z-index: 10;
+    }
+    
+    .header {
+        width: 215vh;
+        height: 60px;
+        position: fixed;
+        background-color: rgb(0, 85, 128);
+    }
+    
+    .icon-size {
+        font-size: 20px;
+        color: white;
+    }
+    
+    ul.nav {
+        display: flex;
+        justify-content: left;
+    }
+    
+    ul.nav>li {
+        list-style: none;
+        /* bo dau cham tren dau */
+        padding: 0 40px;
+        position: relative;
+        left: 5%;
+        /* lay lam goc */
+    }
+    
+    ul.nav li:hover {
+        border-bottom: 1px solid rgb(116, 116, 107);
+        z-index: 1;
+        background-color: grey;
+    }
+    
+    ul.nav li a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        /* tat bo gach chan */
+        line-height: 60px;
+        /* dat trung voi chieu cao */
+    }
+    
+    .sub-nav {
+        display: none;
+        /* ẩn */
+        height: auto;
+        background-color: rgb(0, 85, 128);
+        font-size: 25px;
+        position: absolute;
+        left: 0%;
+    }
+    
+    .sub-nav li {
+        list-style: none;
+        text-align: center;
+        margin-left: 10;
+        border-bottom: 1px solid rgb(149, 233, 100);
+        width: 200px;
+    }
+    
+    .sub-nav ul.sub-nav {
+        background-color: rgb(149, 233, 100);
+        left: 200px;
+        top: 0;
+        width: 200px;
+    }
+    
+    ul.nav ul.sub-nav li {
+        position: relative;
+    }
+    
+    ul.nav li:hover>.sub-nav {
+        /* chi truc tiep */
+        display: block;
+    }
+    
+    .img_main {
+        position: relative;
+        opacity: 0.2;
+        top: -4px;
+        left: -30%;
+    }
+    
+    .content {
+        left: -30%;
+        position: absolute;
+        top: 15%;
+        height: 50%;
+        width: 150vh;
+        display: flex;
+    }
+    
+    .footer {
+        position: absolute;
+        top: 800px;
+        width: 100%;
+        height: 100px;
+        background: #001e4d7b;
+        text-align: center;
+        padding: 5%;
+        color: rgba(255, 255, 255, 0.688);
+    }
+</style>
+
+<body id="phancuathetrang">
+
+    <header>
+        <div class="header">
+            <ul class="nav">
+
+                <div class="ten_web"><b>SKILL UP</b></div>
+
+                <li id="b1">
+                    <i class="fas fa-home icon-size"></i>
+                    <a href="" wight="10px" height="10xp">Trang chủ</a>
+                </li>
+
+                <li><a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/Khoa_hoc%20.html">Khóa học</a>
+
+                    <ul class="sub-nav">
+                        <li>
+                            <a href="">HTML</a>
+                        </li>
+                        <li><a href="">CSS</a>
+                        </li>
+                        <li>
+                            <a href="">javascript</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Đề thi</a>
+                </li>
+                <li>
+                    <a href="">Kết quả thi</a>
+                </li>
+                <li><a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/Lien_he2.html">Liên hệ</a></li>
+                <li class="dang_xuat">
+                    <i class="fas fa-sign-out-alt icon-size"></i>
+                    <a href="">Đăng xuất</a>
+                </li>
+                <!-- Trong body của trang chính hoặc layout chung -->
+                <!-- Trong body của trang chính hoặc layout chung -->
+                <div id="user-info" style="position: fixed; top: 10px; right: 10px; background: #fff; padding: 10px; border: 1px solid #ccc;"></div>
+
+
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+
+
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>Nhóm 10 K72 Công nghệ Web</p>
+            <p>26 tháng 12, 2023</p>
+            <p>All rights reserved by ©Ngoc Linh is number one Khoa Công nghệ thông tin - ĐHSPHN 2023</p>
+        </div>
+
+    </footer>
+</body>
+
+<script type="text/javascript" src="../login/Question/main.js">
+    // Trong file JavaScript của bạn
+    function displayUserInfo(username) {
+        var userInfoElement = document.getElementById('user-info');
+        userInfoElement.innerHTML = 'Chào mừng, ' + username + '! <button onclick="logout()">Đăng xuất</button>';
+    }
+
+    function logout() {
+        // Thực hiện các bước đăng xuất (xoá thông tin người dùng, chuyển hướng, v.v.)
+        // Sau đó, cập nhật lại nội dung của phần tử HTML
+        var userInfoElement = document.getElementById('user-info');
+        userInfoElement.innerHTML = '';
+        // Trong trang đăng nhập
+        // Sau khi đăng nhập thành công
+        var username = 'Tên người dùng'; // Thay đổi bằng thông tin người dùng thực tế
+        displayUserInfo(username);
+
+    }
+</script>
+
+</html>
+
+</html>
+
+</html>
