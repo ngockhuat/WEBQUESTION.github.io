@@ -214,10 +214,10 @@
 
             <li id="b1">
                 <i class="fas fa-home icon-size"></i>
-                <a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/trangchu.html" wight="10px" height="10xp">Trang chủ</a>
+                <a href="/Trang chủ/trangchu.html" wight="10px" height="10xp">Trang chủ</a>
             </li>
 
-            <li><a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/Khoa_hoc%20.html">Khóa học</a>
+            <li><a href="/Trang chủ/Khoa_hoc .html">Khóa học</a>
 
                 <ul class="sub-nav">
 
@@ -227,7 +227,7 @@
                     <li><a href="">CSS</a>
                     </li>
                     <li>
-                        <a href="">javascript</a>
+                        <a href="/Trang chủ/js.html">JAVASCRIPT</a>
                     </li>
                 </ul>
             </li>
@@ -237,14 +237,17 @@
             <li>
                 <a href="">Kết quả thi</a>
             </li>
-            <li><a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/Lien_he2.html">Liên hệ</a></li>
+            <li><a href="/Trang chủ/Lien_he2.html">Liên hệ</a></li>
 
-            <li class="dang_xuat">
+            <li class="dang_xuat" onclick="logout();">
                 <i class="fas fa-sign-out-alt icon-size"></i>
-                <a href="">Đăng xuất</a>
+                <a href="#" id="logout">Đăng xuất</a>
             </li>
-            <li>
-                Lưu thông tin
+            <li style="color: aliceblue;">
+
+                <div id="userinfo" style="position: relative; top: 10px; right: 10px;  padding: 10px; border: 1px solid #ccc; width: 200px;left: 5%; display:flex;">
+                    <span class="fas fa-user"></span>
+                </div>
             </li>
         </ul>
     </div>
@@ -276,6 +279,7 @@
     </div>
 
 </footer>
+<script type="text/javascript" src="/login/Question/main.js"></script>
 
 
 

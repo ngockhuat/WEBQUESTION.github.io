@@ -36,17 +36,12 @@
         font-size: 43px;
     }
     
-    header {
-        position: relative;
-        justify-content: left;
-        z-index: 10;
-    }
-    
     .header {
         width: 215vh;
         height: 60px;
         position: fixed;
         background-color: rgb(0, 85, 128);
+        z-index: 1;
     }
     
     .icon-size {
@@ -113,7 +108,6 @@
     }
     
     ul.nav li:hover>.sub-nav {
-        /* chi truc tiep */
         display: block;
     }
     
@@ -133,7 +127,6 @@
         left: 20%;
         top: 60px;
         font-size: 40px;
-        /* box-shadow: blue 1px 1px 1px 1px; */
         width: 400px;
     }
     
@@ -155,17 +148,31 @@
     
     .course {
         height: 110%;
-        width: 300px;
+        width: 400px;
         left: -20%;
         display: flex;
         flex-direction: column;
         background-color: rgba(14, 117, 235, 0.301);
-        margin: auto;
+        margin: 20px;
         padding: 2%;
         align-items: center;
         position: relative;
         border-radius: 20px;
         border: 1 solid rgba(128, 128, 128, 0.927);
+    }
+    
+    .buttonjs {
+        position: relative;
+        width: 270%;
+        height: 105%;
+        top: 60px;
+        background: rgba(180, 26, 2, 0.997);
+        border: 1px solid rgba(128, 128, 128, 0.727);
+        border-radius: 10px;
+        color: ghostwhite;
+        box-shadow: 1px 1px black;
+        font-size: 18px;
+        left: -60px;
     }
     
     .button {
@@ -181,32 +188,24 @@
         font-size: 18px;
     }
     
-    .footer {
-        position: relatflive;
-        bottom: -0%;
-        width: 100%;
-        height: 100px;
-        background: #001e4d7b;
-        text-align: center;
-        padding: 5%;
-        color: rgba(255, 255, 255, 0.688);
+    img {
+        margin-top: 20%;
+        width: 300px;
+    }
+    
+    button {
+        transform: scale(1);
+        transition: all 0.5s;
+        border-radius: 10px;
     }
     
     button:hover {
-        background: rgb(32, 32, 3);
-        color: aliceblue;
-        font-size: 20px;
-        font-weight: 400;
-    }
-    
-    .text {
-        font-size: 90px;
-        margin: 50%;
-        z-index: inherit;
+        transform: scale(1.1);
     }
     
     .course {
         transition: background-color 0.3s ease;
+        height: 500px;
     }
     
     .course:hover {
@@ -214,24 +213,26 @@
         color: #000;
     }
     
-    .text {
-        transition: transform 0.3s ease;
+    img {
+        padding: 30px;
+        transform: scale(1);
+        transition: all 0.5s;
+        border-radius: 10px;
     }
     
-    .text:hover {
-        color: #000;
-        /* Scale the text to 110% on hover */
-        /* Add any other style changes you want on hover */
-    }
-    
-    .text {
-        transition: transform 0.3s ease;
-    }
-    
-    .text:hover {
+    img:hover {
         transform: scale(1.1);
-        /* Scale the text to 110% on hover */
-        /* Add any other style changes you want on hover */
+    }
+    
+    .footer {
+        position: absolute;
+        bottom: -30%;
+        width: 100%;
+        height: 100px;
+        background: #001e4d7b;
+        text-align: center;
+        padding: 5%;
+        color: rgba(255, 255, 255, 0.688);
     }
 </style>
 
@@ -245,10 +246,10 @@
 
                 <li id="b1">
                     <i class="fas fa-home icon-size"></i>
-                    <a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/trangchu.html" wight="10px" height="10xp">Trang chủ</a>
+                    <a href="/Trang chủ/trangchu.html" wight="10px" height="10xp">Trang chủ</a>
                 </li>
 
-                <li><a href="http://127.0.0.1:5500/Trang%20ch%E1%BB%A7/Khoa_hoc%20.html">Khóa học</a>
+                <li><a href="/Trang chủ/Khoa_hoc .html">Khóa học</a>
 
                     <ul class="sub-nav">
                         <li>
@@ -257,7 +258,7 @@
                         <li><a href="">CSS</a>
                         </li>
                         <li>
-                            <a href="">javascript</a>
+                            <a href="/Trang chủ/js.html">javascript</a>
                         </li>
                     </ul>
                 </li>
@@ -267,13 +268,16 @@
                 <li>
                     <a href="">Kết quả thi</a>
                 </li>
-                <li><a href="Lien_He.html">Liên hệ</a></li>
-                <li class="dang_xuat">
+                <li><a href="/Trang chủ/Lien_he2.html">Liên hệ</a></li>
+                <li class="dang_xuat" onclick="logout();">
                     <i class="fas fa-sign-out-alt icon-size"></i>
-                    <a href="">Đăng xuất</a>
+                    <a href="#" id="logout">Đăng xuất</a>
                 </li>
-                <li>
-                    Lưu thông tin
+                <li style="color: aliceblue;">
+
+                    <div id="userinfo" style="position: relative; top: 10px; right: 10px;  padding: 10px; border: 1px solid #ccc; width: 200px;left: 5%; display:flex;">
+                        <span class="fas fa-user"></span>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -290,21 +294,22 @@
             </div>
             <div class="content">
                 <div class="course">
-                    <p class="text">HTML</p>
+                    <img src="https://static.semrush.com/blog/uploads/media/24/cc/24ccbb44daf424e2a4f3a15846a4e570/html-redirect.svg?fbclid=IwAR2tITmzCvMmLc96E4Mo_TvVBisPyAcah7tQFkZwii3qucMf5ZEeeMG2qM0" id="img">
                     <button type=" button " class="button " id="image ">Vào học</button>
                 </div>
                 <div class="course ">
-                    <p class="text">CSS</p>
+                    <img src="https://wpformation.com/wp-content/uploads/2020/09/CSS-WordPress.jpg.webp" id="img">
                     <button type="button " class="button " id="image ">Vào học</button>
                 </div>
+
                 <div class="course ">
-                    <p class="text">JS</p>
-                    <button type="button " class="button " id="image ">Vào học</button>
+                    <img src="https://static.semrush.com/blog/uploads/media/e6/b7/e6b7699595cb741570c9b385fa8f7971/javascript.svg?fbclid=IwAR13cDs8tK5ZrTuK2MDD7BOkwDxlGgvGG5QWS8W_T_guMylQxSZc-H0052Y" id="img">
+                    <a href="/Trang chủ/js.html"> <button type="button" class="buttonjs" id="image ">Vào học</button></a>
                 </div>
+
             </div>
 
     </main>
-
     <footer>
         <div class="footer ">
             <p>Nhóm 10 K72 Công nghệ Web</p>
@@ -313,10 +318,7 @@
         </div>
 
     </footer>
+    <script type="text/javascript" src="/login/Question/main.js"></script>
 </body>
-
-</html>
-
-</html>
 
 </html>

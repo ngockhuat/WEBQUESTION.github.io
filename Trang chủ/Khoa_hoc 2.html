@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>Khoa_hoc</title>
     <!-- <link rel="stylesheet" href="Menu.css"> -->
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
@@ -15,8 +15,6 @@
         margin: 0;
         box-sizing: border-box;
         cursor: pointer;
-        text-decoration: none;
-        /* gạch chân */
     }
     
     body {
@@ -119,6 +117,26 @@
         display: block;
     }
     
+    main {
+        position: relative;
+        height: 100%;
+        width: 100vh;
+        left: 25%;
+        top: 70px;
+    }
+    
+    h1 {
+        position: relative;
+        color: rgb(0, 85, 128);
+        font-size: 25px;
+        font-weight: 600;
+        left: 20%;
+        top: 60px;
+        font-size: 40px;
+        /* box-shadow: blue 1px 1px 1px 1px; */
+        width: 400px;
+    }
+    
     .img_main {
         position: relative;
         opacity: 0.2;
@@ -135,79 +153,37 @@
         display: flex;
     }
     
-    .userinfo {
-        background-color: aliceblue;
-        font-size: 20px;
-    }
-    
-    main img {
-        position: relative;
-        top: 100px;
-    }
-    
-    .text_main {
-        position: relative;
-        width: 400px;
-        height: 100%;
-        left: 65%;
-        top: -500px;
-        border: 2px solid rgba(0, 0, 255, 0.341);
-        padding: 5px;
-        margin: 5px;
-        text-shadow: h-shadow v-shadow blur-radius color;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 30px;
-        color: rgb(4, 4, 108);
-        border-radius: 10px;
-        background-color: rgba(250, 235, 215, 0.445);
-    }
-    /* .HSJ {
-        position: relative;
-        width: 400px;
-        height: 150px;
-        top: -5px;
-        opacity: 0.3;
-        /* left: -450px; */
-    
-    .image2 {
-        position: relative;
+    .course {
+        height: 110%;
         width: 300px;
-        /* height: 150px;
-        /* top: -400px; */
-        opacity: 0.5;
-        left: 0%;
-    }
-    
-    .vao_hoc {
+        left: -20%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(14, 117, 235, 0.301);
+        margin: auto;
+        padding: 2%;
+        align-items: center;
         position: relative;
-        width: 300px;
-        height: 150px;
-        background: rgba(51, 40, 40, 0.54);
-        left: 40%;
-        top: -400px;
-        font-size: 50px;
-        padding: 50px;
-        /* margin: 50px; */
-        justify-content: center;
-        color: aliceblue;
         border-radius: 20px;
-        opacity: 0.8;
+        border: 1 solid rgba(128, 128, 128, 0.927);
     }
-    /* giải thích */
     
-    .vao_hoc {
-        transform: scale(1);
-        transition: all 0.5s;
+    .button {
+        position: absolute;
+        width: 50%;
+        height: 10%;
+        top: 80%;
+        background: rgba(180, 26, 2, 0.997);
+        border: 1px solid rgba(128, 128, 128, 0.727);
         border-radius: 10px;
-    }
-    
-    .vao_hoc:hover {
-        transform: scale(1.1);
+        color: ghostwhite;
+        box-shadow: 1px 1px black;
+        font-size: 18px;
     }
     
     .footer {
-        position: absolute;
-        top: 800px;
+        position: relatflive;
+        bottom: -0%;
         width: 100%;
         height: 100px;
         background: #001e4d7b;
@@ -215,28 +191,73 @@
         padding: 5%;
         color: rgba(255, 255, 255, 0.688);
     }
+    
+    button:hover {
+        background: rgb(32, 32, 3);
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    
+    .text {
+        font-size: 90px;
+        margin: 50%;
+        z-index: inherit;
+    }
+    
+    .course {
+        transition: background-color 0.3s ease;
+    }
+    
+    .course:hover {
+        background-color: #ffcc00;
+        color: #000;
+    }
+    
+    .text {
+        transition: transform 0.3s ease;
+    }
+    
+    .text:hover {
+        color: #000;
+        /* Scale the text to 110% on hover */
+        /* Add any other style changes you want on hover */
+    }
+    
+    .text {
+        transition: transform 0.3s ease;
+    }
+    
+    .text:hover {
+        transform: scale(1.1);
+        /* Scale the text to 110% on hover */
+        /* Add any other style changes you want on hover */
+    }
 </style>
 
 <body id="phancuathetrang">
+
     <header>
         <div class="header">
             <ul class="nav">
+
                 <div class="ten_web"><b>SKILL UP</b></div>
+
                 <li id="b1">
                     <i class="fas fa-home icon-size"></i>
-                    <a href="" wight="10px" height="10xp">Trang chủ</a>
+                    <a href="/Trang chủ/trangchu.html" wight="10px" height="10xp">Trang chủ</a>
                 </li>
-                <li>
-                    <a href="/Trang chủ/Khoa_hoc .html">Khóa học</a>
+
+                <li><a href="/Trang chủ/Khoa_hoc .html">Khóa học</a>
+
                     <ul class="sub-nav">
                         <li>
-                            <a href="/Trang chủ/js.html">HTML</a>
+                            <a href="">HTML</a>
+                        </li>
+                        <li><a href="">CSS</a>
                         </li>
                         <li>
-                            <a href="">CSS</a>
-                        </li>
-                        <li>
-                            <a href="/Trang chủ/js.html">JavaScript</a>
+                            <a href="">javascript</a>
                         </li>
                     </ul>
                 </li>
@@ -246,9 +267,7 @@
                 <li>
                     <a href="">Kết quả thi</a>
                 </li>
-                <li>
-                    <a href="/Trang chủ//Lien_he2.html">Liên hệ</a>
-                </li>
+                <li><a href="/Trang chủ/Lien_he2.html">Liên hệ</a></li>
                 <li class="dang_xuat" onclick="logout();">
                     <i class="fas fa-sign-out-alt icon-size"></i>
                     <a href="#" id="logout">Đăng xuất</a>
@@ -261,30 +280,43 @@
                 </li>
             </ul>
         </div>
+
     </header>
+
     <main>
-        <!-- Your main content here -->
-        <img src="https://www.aturtoko.id/wp-content/uploads/2023/03/Website-e-gov.jpg" alt="" width="70%" height="70%">
-        <!-- <img src="/Trang chủ/img/html_Css_js.png" alt="" class="HSJ"> -->
-        <img src="https://media2.giphy.com/media/jHRAf2A6WuduX2raSe/giphy.gif?cid=999aceacnc41am2cq5zwfwb1r0ugxavrgtw7nayowyyg9nkn&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="" class="image2">
-        <div class="text_main">
-            <p style="text-shadow: 2px 2px 2px 2px #001e4d7b;">Truy cập trang web SKILL UP ngay hôm nay để học lập trình web và tham gia cộng đồng học tập năng động! </p>
-        </div>
-        <a href="/Trang chủ/Khoa_hoc .html">
-            <div class="vao_hoc">
-                Vào Học</div>
-        </a>
+        <h1>
+            <marquee Direction="" behavior="alternate">
+                <div class="lt">LUYỆN TẬP </div>
+            </marquee>
+
+            <img src="home.png" alt="" class="img_main">
+            </div>
+            <div class="content">
+                <div class="course">
+                    <p class="text">HTML</p>
+                    <button type=" button " class="button " id="image ">Vào học</button>
+                </div>
+                <div class="course ">
+                    <p class="text">CSS</p>
+                    <button type="button " class="button " id="image ">Vào học</button>
+                </div>
+                <div class="course ">
+                    <p class="text">JS</p>
+                    <button type="button " class="button " id="image ">Vào học</button>
+                </div>
+            </div>
+
     </main>
+
     <footer>
-        <div class="footer">
+        <div class="footer ">
             <p>Nhóm 10 K72 Công nghệ Web</p>
             <p>26 tháng 12, 2023</p>
             <p>All rights reserved by ©Ngoc Linh is number one Khoa Công nghệ thông tin - ĐHSPHN 2023</p>
         </div>
+
     </footer>
     <script type="text/javascript" src="/login/Question/main.js"></script>
 </body>
-
-</html>
 
 </html>
